@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GMM Grammy Place · Report Suite</title>
+<title>GMM Grammy Place · Property &amp; Asset Management</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --jewel-0:#040A1E; --jewel-1:#071433; --jewel-2:#0B1F52; --jewel-3:#12318A; --sapphire:#2554D6;
   --gold:#B8865B; --gold-2:#C9A06E; --champagne:#E6CC9F; --ivory:#FBF8F2; --paper:#F6F1E7;
   --ink:#0B1F52; --muted:#7A8396; --hair:#E7DCC8;
   --side:300px; --top:78px;
-  --font:'Montserrat','Kanit','Helvetica Neue',Arial,sans-serif;
+  --font:'Century Gothic','CenturyGothic','URW Gothic','Didact Gothic','Kanit',Arial,sans-serif;
   --jewel-bg:
     radial-gradient(60% 50% at 18% 0%,rgba(52,104,240,.42),transparent 62%),
     radial-gradient(45% 40% at 100% 30%,rgba(37,84,214,.30),transparent 70%),
@@ -24,7 +24,7 @@
 *{box-sizing:border-box}
 html,body{height:100%}
 body{margin:0;background:var(--jewel-0);font-family:var(--font);color:var(--ink);font-size:14px;line-height:1.55;overflow:hidden;-webkit-font-smoothing:antialiased}
-html[lang="th"] body{font-family:'Kanit','Montserrat',Arial,sans-serif}
+html[lang="th"] body{font-family:'Kanit','Century Gothic','CenturyGothic','URW Gothic','Didact Gothic',Arial,sans-serif}
 button{font-family:inherit;cursor:pointer}
 
 /* ============ left menu: deep jewel sapphire ============ */
@@ -46,16 +46,16 @@ button{font-family:inherit;cursor:pointer}
 .mono{position:relative;width:50px;height:50px;flex:none;border-radius:50%;display:grid;place-items:center;
   background:radial-gradient(circle at 30% 25%,#2B5BE0 0%,#12318A 45%,#071433 80%);
   box-shadow:0 0 0 1px var(--gold-2),0 0 0 4px var(--jewel-1),0 0 0 5px rgba(201,160,110,.6),0 0 24px rgba(52,104,240,.45),0 10px 24px rgba(0,0,0,.5)}
-.mono span{font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.02em;
+.mono span{font-family:'Century Gothic','CenturyGothic','URW Gothic','Didact Gothic',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.02em;
   background:linear-gradient(160deg,#F7E4BF 0%,#D7B27C 45%,#A97A4E 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.brand-word{font-family:'Montserrat',sans-serif;font-weight:800;font-size:15px;line-height:1.15;letter-spacing:.14em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.brand-word{font-family:'Century Gothic','CenturyGothic','URW Gothic','Didact Gothic',sans-serif;font-weight:800;font-size:15px;line-height:1.15;letter-spacing:.14em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.35)}
 .brand-word em{display:block;font-style:normal;font-weight:500;font-size:11px;letter-spacing:.52em;margin-top:5px;
   background:linear-gradient(90deg,#F1DCB4,#B8865B);-webkit-background-clip:text;background-clip:text;color:transparent}
 .ornament{display:flex;align-items:center;gap:10px;margin:0 8px 22px}
 .ornament::before,.ornament::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(201,160,110,0),rgba(201,160,110,.7))}
 .ornament::after{background:linear-gradient(90deg,rgba(201,160,110,.7),rgba(201,160,110,0))}
 .ornament i{width:7px;height:7px;transform:rotate(45deg);background:linear-gradient(135deg,#F1DCB4,#B8865B);box-shadow:0 0 10px rgba(230,204,159,.6)}
-.brand-sub{margin:-12px 8px 24px;text-align:center;color:#B4C2E2;font-size:9.5px;font-weight:600;letter-spacing:.32em;text-transform:uppercase}
+.brand-sub{margin:-12px 4px 24px;text-align:center;color:#B4C2E2;font-size:9.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;white-space:nowrap}
 html[lang="th"] .brand-sub{letter-spacing:.06em;font-size:11.5px;font-weight:400}
 .navcaption{display:flex;align-items:center;gap:10px;font-size:9.5px;font-weight:600;letter-spacing:.26em;color:#93A5CC;text-transform:uppercase;margin:4px 12px 12px}
 .navcaption::before{content:"";width:16px;height:1px;background:var(--gold-2)}
@@ -111,7 +111,7 @@ html[lang="th"] .sub.on{font-weight:500}
 html[lang="th"] .crumb b{font-weight:500;font-size:16.5px}
 .top-right{display:flex;align-items:center;gap:10px;flex:none}
 .segmented{display:inline-flex;padding:0;border-radius:10px;overflow:hidden;background:rgba(4,10,30,.55);border:1px solid rgba(230,204,159,.35)}
-.segmented button{border:0;background:transparent;padding:9px 16px;color:#C9D4EC;font-family:'Montserrat','Kanit',sans-serif;font-size:14px;font-weight:600;letter-spacing:0;line-height:1}
+.segmented button{border:0;background:transparent;padding:9px 16px;color:#C9D4EC;font-family:'Century Gothic','CenturyGothic','URW Gothic','Didact Gothic','Kanit',sans-serif;font-size:14px;font-weight:600;letter-spacing:0;line-height:1}
 .segmented button[data-lang="th"]{font-family:'Kanit',sans-serif;font-weight:400;font-size:15px}
 .segmented button:hover{color:#fff}
 .segmented button.sel{background:linear-gradient(135deg,#2BB0E6,#1B7FD6);color:#fff;font-weight:700;box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 0 18px rgba(43,176,230,.35)}
@@ -134,7 +134,7 @@ html[lang="th"] .toolbtn{letter-spacing:0;font-weight:400;font-size:12.5px}
 @keyframes spin{to{transform:rotate(360deg)}}
 .placeholder{position:absolute;inset:0;display:none;place-items:center;padding:30px;overflow:hidden;background:var(--jewel-bg)}
 .placeholder.on{display:grid}
-.placeholder::before{content:"G";position:absolute;right:-3%;bottom:-20%;font-family:'Montserrat',sans-serif;font-weight:800;font-size:540px;line-height:1;color:rgba(230,204,159,.06)}
+.placeholder::before{content:"G";position:absolute;right:-3%;bottom:-20%;font-family:'Century Gothic','CenturyGothic','URW Gothic','Didact Gothic',sans-serif;font-weight:800;font-size:540px;line-height:1;color:rgba(230,204,159,.06)}
 .ph-card{position:relative;max-width:580px;background:linear-gradient(180deg,#FFFFFF,#FBF7EF);border-radius:18px;padding:42px 46px 38px;box-shadow:0 40px 90px rgba(0,0,0,.5),0 0 40px rgba(52,104,240,.18),inset 0 0 0 1px var(--hair)}
 .ph-card::before{content:"";position:absolute;left:46px;right:46px;top:0;height:2px;background:linear-gradient(90deg,#E6CC9F,#B8865B,#E6CC9F)}
 .ph-k{font-size:10px;font-weight:700;letter-spacing:.3em;color:var(--gold);text-transform:uppercase}
@@ -171,7 +171,7 @@ html[lang="th"] .ph-tag{letter-spacing:.03em;font-size:12px;font-weight:500}
     <div class="brand-word">GMM GRAMMY<em>PLACE</em></div>
   </div>
   <div class="ornament"><i></i></div>
-  <div class="brand-sub" data-en="Report suite" data-th="ชุดรายงาน">Report suite</div>
+  <div class="brand-sub" data-en="Property &amp;amp; Asset Management" data-th="การบริหารอสังหาริมทรัพย์และสินทรัพย์">Property &amp; Asset Management</div>
   <div class="navcaption" data-en="Intelligence modules" data-th="โมดูลข้อมูล">Intelligence modules</div>
   <nav class="nav" id="nav"></nav>
   <div class="sidebar-foot">
@@ -229,21 +229,21 @@ html[lang="th"] .ph-tag{letter-spacing:.03em;font-size:12px;font-weight:500}
       en: 'Strategy Report', th: 'รายงานกลยุทธ์',
       sections: [
         { top: true, n: '', en: 'Cover & 3D Model', th: 'หน้าปกและโมเดล 3 มิติ' },
-        { ch: 1, n: '01', en: 'Executive Assessment', th: 'การประเมินสำหรับผู้บริหาร' },
-        { ch: 2, n: '02', en: 'Strategic Direction & Growth', th: 'ทิศทางกลยุทธ์และการเติบโต' },
-        { ch: 3, n: '03', en: 'Building Profile & Occupiers', th: 'ข้อมูลอาคารและฐานผู้เช่า' },
-        { ch: 4, n: '04', en: 'Vacancy & Leasing', th: 'พื้นที่ว่างและการปล่อยเช่า' },
-        { ch: 5, n: '05', en: 'Tenant Mix & Direct Leasing', th: 'ส่วนผสมผู้เช่าและการเช่าตรง' },
-        { ch: 6, n: '06', en: 'Managed Alternatives', th: 'ทางเลือกที่บริหารเอง' },
-        { ch: 7, n: '07', en: 'Asset Operations & Service', th: 'การดำเนินงานและคุณภาพบริการ' },
-        { ch: 8, n: '08', en: 'NOI, Comparables & CAPEX', th: 'NOI ตลาดเปรียบเทียบ และ CAPEX' },
-        { ch: 9, n: '09', en: 'Governance Frameworks', th: 'กรอบการบริหารและกำกับดูแล' },
-        { ch: 10, n: '10', en: '100-Day Programme', th: 'โครงการ 100 วัน' },
-        { ch: 11, n: '11', en: 'Workflows & 12-Month Direction', th: 'ขั้นตอนงานและทิศทาง 12 เดือน' },
-        { ch: 12, n: '12', en: 'Conclusion & Decisions', th: 'ข้อสรุปและการตัดสินใจ' },
-        { ch: 13, n: '13', en: 'Excel Evidence Model', th: 'แบบจำลองหลักฐาน Excel' },
-        { ch: 14, n: '14', en: 'Documentary Records', th: 'บันทึกหลักฐานเชิงเอกสาร' },
-        { ch: 15, n: '15', en: 'Sources & References', th: 'แหล่งข้อมูลและเอกสารอ้างอิง' }
+        { ch: 1, sid: 's0', n: '01', en: 'Executive Assessment', th: 'การประเมินสำหรับผู้บริหาร' },
+        { ch: 2, sid: 's2', n: '02', en: 'Strategic Direction & Growth', th: 'ทิศทางกลยุทธ์และการเติบโต' },
+        { ch: 3, sid: 's17', n: '03', en: 'Building Profile & Occupiers', th: 'ข้อมูลอาคารและฐานผู้เช่า' },
+        { ch: 4, sid: 's28', n: '04', en: 'Vacancy & Leasing', th: 'พื้นที่ว่างและการปล่อยเช่า' },
+        { ch: 5, sid: 's37', n: '05', en: 'Tenant Mix & Direct Leasing', th: 'ส่วนผสมผู้เช่าและการเช่าตรง' },
+        { ch: 6, sid: 's46', n: '06', en: 'Managed Alternatives', th: 'ทางเลือกที่บริหารเอง' },
+        { ch: 7, sid: 's53', n: '07', en: 'Asset Operations & Service', th: 'การดำเนินงานและคุณภาพบริการ' },
+        { ch: 8, sid: 's57', n: '08', en: 'NOI, Comparables & CAPEX', th: 'NOI ตลาดเปรียบเทียบ และ CAPEX' },
+        { ch: 9, sid: 's61', n: '09', en: 'Governance Frameworks', th: 'กรอบการบริหารและกำกับดูแล' },
+        { ch: 10, sid: 's63', n: '10', en: '100-Day Programme', th: 'โครงการ 100 วัน' },
+        { ch: 11, sid: 's66', n: '11', en: 'Workflows & 12-Month Direction', th: 'ขั้นตอนงานและทิศทาง 12 เดือน' },
+        { ch: 12, sid: 's68', n: '12', en: 'Conclusion & Decisions', th: 'ข้อสรุปและการตัดสินใจ' },
+        { ch: 13, sid: 's69', n: '13', en: 'Excel Evidence Model', th: 'แบบจำลองหลักฐาน Excel' },
+        { ch: 14, sid: 's71', n: '14', en: 'Documentary Records', th: 'บันทึกหลักฐานเชิงเอกสาร' },
+        { ch: 15, sid: 's75', n: '15', en: 'Sources & References', th: 'แหล่งข้อมูลและเอกสารอ้างอิง' }
       ] },
     { id: 'cbd-market', type: 'cbd', icon: ICON.city,
       url: 'https://areewanbiz-lang.github.io/Bangkok-CBD-Office-Market-/',
@@ -262,25 +262,39 @@ html[lang="th"] .ph-tag{letter-spacing:.03em;font-size:12px;font-weight:500}
         { el: 'section-07', n: '09', en: 'SWOT & PESTEL', th: 'SWOT และ PESTEL' },
         { el: 'section-methodology', n: '10', en: 'Sources & Methodology', th: 'แหล่งข้อมูลและระเบียบวิธี' }
       ] },
-    { id: 'master-report', type: 'pdf', icon: ICON.doc,
-      url: 'master-report.pdf',
-      en: 'Master Report', th: 'รายงานหลัก', sections: [] }
+    { id: 'master-report', type: 'dash', icon: ICON.doc,
+      url: 'https://areewanbiz-lang.github.io/GMM-Grammy-Place-Report-Dashboard-2026/',
+      en: 'Master Report', th: 'รายงานหลัก',
+      sections: [
+        { view: 'overview', n: '', en: 'Overview', th: 'ภาพรวมสินทรัพย์' },
+        { view: 'visuals', n: '3D', en: 'Original 3D & Charts', th: 'ภาพ 3 มิติและกราฟต้นฉบับ' },
+        { view: 'floors', n: '01', en: 'Floor Directory', th: 'ผังผู้เช่ารายชั้น' },
+        { view: 'vacancy', n: '02', en: 'Vacancy Register', th: 'รายการพื้นที่ว่าง' },
+        { view: 'market', n: '03', en: 'Market Benchmarks', th: 'เปรียบเทียบค่าเช่า' },
+        { view: 'cbd', n: '04', en: 'Bangkok CBD Dataset', th: 'ชุดข้อมูล CBD กรุงเทพฯ' },
+        { view: 'finance', n: '05', en: 'Financial Scenarios', th: 'จำลองผลตอบแทน' },
+        { view: 'capex', n: '06', en: 'CAPEX Programme', th: 'แผนงบลงทุน CAPEX' },
+        { view: 'roadmap', n: '07', en: '100-Day Roadmap', th: 'แผนดำเนินงาน 100 วัน' },
+        { view: 'report', n: '08', en: 'Full Source Report', th: 'รายงานฉบับเต็ม' }
+      ] }
   ];
 
   /* each report's own menu is hidden, so this left menu is the only one
      (works once the hub sits on the same GitHub Pages site as the reports) */
   var INNER_CSS = {
     cbd: 'header.sticky{display:none!important}.lang-switch{display:none!important}section[id]{scroll-margin-top:18px!important}',
-    gmm: 'details.toc,.langsw{display:none!important}'
+    gmm: 'details.toc,.langsw{display:none!important}',
+    dash: '.sidebar,#sidebarMenu,#languages{display:none!important}'
   };
 
   var $ = function (id) { return document.getElementById(id); };
   var lang = 'en', current = null, frames = {}, pdfOk = null, openGroup = null;
-  try { if (localStorage.getItem('gmmSuiteLang') === 'th') lang = 'th'; } catch (e) {}
+  /* always opens in English; ไทย is one click away in the top bar */
 
   function srcFor(r, hash) {
     if (r.type === 'gmm') return r.url + '#' + (hash || 'en');
     if (r.type === 'cbd') return r.url + '?lang=' + lang + (hash ? '#' + hash : '');
+    if (r.type === 'dash') return r.url + '#' + (hash || 'overview');
     return r.url;
   }
   function byId(id) { return REPORTS.filter(function (x) { return x.id === id; })[0]; }
@@ -353,12 +367,16 @@ html[lang="th"] .ph-tag{letter-spacing:.03em;font-size:12px;font-weight:500}
   function goSection(r, i) {
     markSub(r, i, true);
     var f = frames[r.id], d = f && f.__loaded && doc(f);
+    if (r.type === 'dash') { f.src = srcFor(r, r.sections[i].view); return; }   /* the dashboard opens its pages by #name */
     if (d) {
       var t = target(r, d, i), w = f.contentWindow;
       if (t === 'TOP') { w.scrollTo({ top: 0, behavior: 'smooth' }); return; }
       if (t) { t.scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
     }
-    if (r.type === 'cbd' && r.sections[i].el) { f.src = srcFor(r, r.sections[i].el); }   /* fallback: plain link */
+    /* fallback when the hub cannot reach inside the report (e.g. opened from a downloaded file): plain page links */
+    var sec = r.sections[i];
+    if (r.type === 'cbd' && sec.el) { f.src = srcFor(r, sec.el); }
+    if (r.type === 'gmm') { f.__lang = lang; f.src = r.url + '#' + (sec.top ? 'hero3d' : lang + '-' + sec.sid); }
   }
 
   var lockUntil = 0;
@@ -376,6 +394,14 @@ html[lang="th"] .ph-tag{letter-spacing:.03em;font-size:12px;font-weight:500}
   /* follow the reader: highlight the section on screen */
   function spy(r, f) {
     var d = doc(f); if (!d || !r.sections.length) return;
+    if (r.type === 'dash') {
+      var mark = function () {
+        var h = f.contentWindow.location.hash.slice(1), k = 0;
+        r.sections.forEach(function (s, i) { if (s.view === h) k = i; });
+        markSub(r, k, false);
+      };
+      f.contentWindow.addEventListener('hashchange', mark); mark(); return;
+    }
     var w = f.contentWindow, tick = false;
     function upd() {
       tick = false;
@@ -398,6 +424,7 @@ html[lang="th"] .ph-tag{letter-spacing:.03em;font-size:12px;font-weight:500}
       var st = d.createElement('style'); st.id = 'suite-inner'; st.textContent = INNER_CSS[r.type]; d.head.appendChild(st);
     }
     if (r.type === 'gmm' && lang === 'th') { f.__lang = 'th'; f.src = srcFor(r, 'th'); }   /* the report always opens in English */
+    if (r.type === 'dash') dashLang(f);
     if (current === r) $('loading').classList.remove('on');
     spy(r, f);
     if (pendingJump && pendingJump.r === r) { var p = pendingJump; pendingJump = null; setTimeout(function () { goSection(p.r, p.i); }, 350); }
@@ -450,10 +477,17 @@ html[lang="th"] .ph-tag{letter-spacing:.03em;font-size:12px;font-weight:500}
   }
 
   /* ---------- language: keep each report in step with English | ไทย ---------- */
+  function dashLang(f) {            /* presses the dashboard's own THAI / ENGLISH button */
+    var d = doc(f); if (!d) return;
+    var b = d.querySelector('[data-language="' + lang + '"]');
+    if (b && !b.classList.contains('sel')) b.click();
+    f.__lang = lang;
+  }
   function syncLang(r, f) {
     if (f.__lang === lang) return;
     f.__lang = lang;
     if (r.type === 'gmm') { f.src = srcFor(r, lang); return; }        /* hash change: switches without reloading */
+    if (r.type === 'dash') { dashLang(f); return; }
     if (r.type === 'cbd') {
       try { if (f.contentWindow.setReportLang) { f.contentWindow.setReportLang(lang); return; } } catch (e) {}
       f.__loaded = false; $('loading').classList.add('on'); f.src = srcFor(r);
@@ -462,7 +496,6 @@ html[lang="th"] .ph-tag{letter-spacing:.03em;font-size:12px;font-weight:500}
   document.querySelectorAll('#langs button').forEach(function (b) {
     b.addEventListener('click', function () {
       lang = b.getAttribute('data-lang');
-      try { localStorage.setItem('gmmSuiteLang', lang); } catch (e) {}
       paintText();
       if (current) { $('openTab').href = srcFor(current, current.type === 'gmm' ? lang : ''); if (frames[current.id]) syncLang(current, frames[current.id]); }
     });
