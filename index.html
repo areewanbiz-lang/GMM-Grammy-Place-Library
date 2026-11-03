@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GMM Grammy Place · Report Suite</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --jewel-0:#040A1E; --jewel-1:#071433; --jewel-2:#0B1F52; --jewel-3:#12318A; --sapphire:#2554D6;
+  --gold:#B8865B; --gold-2:#C9A06E; --champagne:#E6CC9F; --ivory:#FBF8F2; --paper:#F6F1E7;
+  --ink:#0B1F52; --muted:#7A8396; --hair:#E7DCC8;
+  --side:300px; --top:78px;
+  --font:'Montserrat','Kanit','Helvetica Neue',Arial,sans-serif;
+  --jewel-bg:
+    radial-gradient(60% 50% at 18% 0%,rgba(52,104,240,.42),transparent 62%),
+    radial-gradient(45% 40% at 100% 30%,rgba(37,84,214,.30),transparent 70%),
+    radial-gradient(50% 45% at 10% 100%,rgba(184,134,91,.20),transparent 72%),
+    conic-gradient(from 210deg at 72% 22%,rgba(255,255,255,.05),transparent 22%,rgba(120,160,255,.07) 38%,transparent 58%,rgba(255,255,255,.03) 80%,transparent),
+    linear-gradient(165deg,#0C2260 0%,#081843 38%,#06102E 70%,#040A1E 100%);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--jewel-0);font-family:var(--font);color:var(--ink);font-size:14px;line-height:1.55;overflow:hidden;-webkit-font-smoothing:antialiased}
+html[lang="th"] body{font-family:'Kanit','Montserrat',Arial,sans-serif}
+button{font-family:inherit;cursor:pointer}
+
+/* ============ left menu: deep jewel sapphire ============ */
+.sidebar{position:fixed;top:0;left:0;bottom:0;width:var(--side);z-index:30;display:flex;flex-direction:column;padding:30px 18px 20px;color:#fff;background:var(--jewel-bg);overflow:hidden}
+/* faceted sparkle, like light caught in a cut stone */
+.sidebar::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.9;
+  background:
+    radial-gradient(1.5px 1.5px at 22% 14%,rgba(255,255,255,.9),transparent),
+    radial-gradient(1px 1px at 78% 9%,rgba(230,204,159,.9),transparent),
+    radial-gradient(1.2px 1.2px at 64% 38%,rgba(170,200,255,.8),transparent),
+    radial-gradient(1px 1px at 12% 57%,rgba(255,255,255,.6),transparent),
+    radial-gradient(1.4px 1.4px at 86% 72%,rgba(230,204,159,.7),transparent),
+    radial-gradient(1px 1px at 40% 88%,rgba(170,200,255,.6),transparent),
+    linear-gradient(118deg,transparent 40%,rgba(255,255,255,.035) 46%,transparent 52%),
+    linear-gradient(62deg,transparent 58%,rgba(120,160,255,.05) 64%,transparent 70%)}
+.sidebar::after{content:"";position:absolute;top:0;right:0;bottom:0;width:1px;background:linear-gradient(180deg,rgba(230,204,159,0),rgba(230,204,159,.65) 30%,rgba(230,204,159,.25) 70%,rgba(230,204,159,0))}
+.sidebar > *{position:relative}
+.brand{display:flex;gap:14px;align-items:center;margin:0 6px 22px}
+.mono{position:relative;width:50px;height:50px;flex:none;border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle at 30% 25%,#2B5BE0 0%,#12318A 45%,#071433 80%);
+  box-shadow:0 0 0 1px var(--gold-2),0 0 0 4px var(--jewel-1),0 0 0 5px rgba(201,160,110,.6),0 0 24px rgba(52,104,240,.45),0 10px 24px rgba(0,0,0,.5)}
+.mono span{font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.02em;
+  background:linear-gradient(160deg,#F7E4BF 0%,#D7B27C 45%,#A97A4E 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand-word{font-family:'Montserrat',sans-serif;font-weight:800;font-size:15px;line-height:1.15;letter-spacing:.14em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.brand-word em{display:block;font-style:normal;font-weight:500;font-size:11px;letter-spacing:.52em;margin-top:5px;
+  background:linear-gradient(90deg,#F1DCB4,#B8865B);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ornament{display:flex;align-items:center;gap:10px;margin:0 8px 22px}
+.ornament::before,.ornament::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(201,160,110,0),rgba(201,160,110,.7))}
+.ornament::after{background:linear-gradient(90deg,rgba(201,160,110,.7),rgba(201,160,110,0))}
+.ornament i{width:7px;height:7px;transform:rotate(45deg);background:linear-gradient(135deg,#F1DCB4,#B8865B);box-shadow:0 0 10px rgba(230,204,159,.6)}
+.brand-sub{margin:-12px 8px 24px;text-align:center;color:#B4C2E2;font-size:9.5px;font-weight:600;letter-spacing:.32em;text-transform:uppercase}
+html[lang="th"] .brand-sub{letter-spacing:.06em;font-size:11.5px;font-weight:400}
+.navcaption{display:flex;align-items:center;gap:10px;font-size:9.5px;font-weight:600;letter-spacing:.26em;color:#93A5CC;text-transform:uppercase;margin:4px 12px 12px}
+.navcaption::before{content:"";width:16px;height:1px;background:var(--gold-2)}
+html[lang="th"] .navcaption{letter-spacing:.05em;font-size:11.5px;font-weight:400}
+.nav{flex:1;overflow-y:auto}
+.nav-btn{position:relative;width:100%;display:flex;align-items:center;gap:12px;padding:13px 14px 13px 16px;margin:5px 0;text-align:left;border:0;background:transparent;
+  color:#D2DCF2;border-radius:12px;transition:background .25s,color .25s,box-shadow .25s;font-size:13.5px;font-weight:500;letter-spacing:.01em}
+.nav-btn svg{flex:none;width:19px;height:19px;color:var(--champagne);opacity:.85;transition:color .25s}
+.nav-btn:hover{background:rgba(120,160,255,.10);color:#fff;box-shadow:inset 0 0 0 1px rgba(150,180,255,.14)}
+.nav-btn:focus-visible{outline:1px solid var(--champagne);outline-offset:2px}
+.nav-btn.active{background:linear-gradient(135deg,#FFFDF8 0%,#F4E8D3 100%);color:var(--jewel-2);font-weight:700;
+  box-shadow:0 12px 30px rgba(0,0,0,.45),0 0 22px rgba(230,204,159,.18),inset 0 0 0 1px rgba(184,134,91,.6)}
+.nav-btn.active svg{color:#9A6B42;opacity:1}
+.nav-btn.active::after{content:"";position:absolute;right:15px;top:50%;width:6px;height:6px;margin-top:-3px;transform:rotate(45deg);background:linear-gradient(135deg,#E6CC9F,#B8865B)}
+.nav-t{line-height:1.3;padding-right:12px}
+html[lang="th"] .nav-btn{letter-spacing:0;font-size:15px;font-weight:400}
+html[lang="th"] .nav-btn.active{font-weight:500}
+.sidebar-foot{position:relative;padding:18px 10px 2px;font-size:11px;color:#A3B2D3;line-height:1.7}
+.sidebar-foot::before{content:"";position:absolute;left:10px;right:10px;top:0;height:1px;background:linear-gradient(90deg,rgba(201,160,110,.7),rgba(201,160,110,0))}
+.sidebar-foot strong{display:block;color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.2em}
+.sidebar-foot b{color:var(--champagne);font-weight:600}
+
+/* ============ dropdown sections under each report ============ */
+.group .subs{display:grid;grid-template-rows:0fr;transition:grid-template-rows .32s cubic-bezier(.16,1,.3,1)}
+.group.open .subs{grid-template-rows:1fr}
+.subs-in{overflow:hidden;min-height:0;margin:0 0 0 25px;border-left:1px solid rgba(230,204,159,.26)}
+.group.open .subs-in{padding:6px 0 10px}
+.sub{display:flex;align-items:center;gap:10px;padding:7px 12px 7px 16px;margin:1px 0 1px -1px;border-left:1px solid transparent;border-radius:0 9px 9px 0;
+  color:#AFC0E2;font-size:12.5px;font-weight:500;line-height:1.3;text-decoration:none;transition:color .2s,background .2s,border-color .2s}
+.sub:hover{color:#fff;background:rgba(120,160,255,.08)}
+.sub.on{color:#F3DDB2;font-weight:700;border-left-color:#E6CC9F;background:linear-gradient(90deg,rgba(230,204,159,.16),rgba(230,204,159,0) 85%)}
+.sub-t{flex:1;min-width:0}
+.sub-n{flex:none;font-size:10px;font-weight:700;letter-spacing:.05em;color:#6F82AE;font-variant-numeric:tabular-nums}
+.sub.on .sub-n{color:#C9A06E}
+html[lang="th"] .sub{font-size:13.5px;font-weight:400}
+html[lang="th"] .sub.on{font-weight:500}
+.nav-btn svg.chev{width:15px;height:15px;margin-left:auto;opacity:.55;transition:transform .3s,opacity .2s}
+.group.open .nav-btn svg.chev{transform:rotate(90deg);opacity:.9}
+.nav-btn.active svg.chev{color:#9A6B42}
+.nav-btn.active:has(.chev)::after{display:none}
+.nav-btn .nav-t{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:4px}
+
+/* ============ top bar: jewel glass ============ */
+.main{position:fixed;top:0;right:0;bottom:0;left:var(--side);display:flex;flex-direction:column}
+.topbar{position:relative;height:var(--top);flex:none;display:flex;align-items:center;gap:14px;justify-content:space-between;padding:0 32px;color:#fff;
+  background:radial-gradient(40% 140% at 12% 0%,rgba(52,104,240,.38),transparent 70%),radial-gradient(30% 120% at 90% 100%,rgba(184,134,91,.16),transparent 70%),linear-gradient(90deg,#0A1C4E,#0C2462 55%,#091A45)}
+.topbar::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,rgba(230,204,159,.75),rgba(230,204,159,.18) 60%,rgba(230,204,159,.5))}
+.top-left{display:flex;align-items:center;gap:12px;min-width:0}
+.crumb{display:flex;align-items:center;gap:12px;min-width:0;white-space:nowrap}
+.crumb .pre{font-size:10px;font-weight:600;letter-spacing:.3em;color:#9FB0D6;text-transform:uppercase}
+.crumb .sep{width:22px;height:1px;background:var(--gold-2)}
+.crumb b{font-size:15.5px;font-weight:700;color:#fff;letter-spacing:.03em;overflow:hidden;text-overflow:ellipsis}
+html[lang="th"] .crumb b{font-weight:500;font-size:16.5px}
+.top-right{display:flex;align-items:center;gap:10px;flex:none}
+.segmented{display:inline-flex;padding:0;border-radius:10px;overflow:hidden;background:rgba(4,10,30,.55);border:1px solid rgba(230,204,159,.35)}
+.segmented button{border:0;background:transparent;padding:9px 16px;color:#C9D4EC;font-family:'Montserrat','Kanit',sans-serif;font-size:14px;font-weight:600;letter-spacing:0;line-height:1}
+.segmented button[data-lang="th"]{font-family:'Kanit',sans-serif;font-weight:400;font-size:15px}
+.segmented button:hover{color:#fff}
+.segmented button.sel{background:linear-gradient(135deg,#2BB0E6,#1B7FD6);color:#fff;font-weight:700;box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 0 18px rgba(43,176,230,.35)}
+.toolbtn{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(230,204,159,.35);color:#F2E6D0;background:rgba(255,255,255,.05);border-radius:999px;padding:8px 15px;
+  font-weight:600;font-size:11px;letter-spacing:.06em;text-decoration:none;white-space:nowrap;transition:border-color .2s,background .2s,box-shadow .2s}
+.toolbtn svg{width:14px;height:14px;color:var(--champagne)}
+.toolbtn:hover{border-color:var(--champagne);background:rgba(230,204,159,.10);box-shadow:0 0 16px rgba(230,204,159,.18)}
+html[lang="th"] .toolbtn{letter-spacing:0;font-weight:400;font-size:12.5px}
+.mobilemenu{display:none;width:42px;height:42px;border-radius:12px;border:1px solid rgba(230,204,159,.4);background:rgba(255,255,255,.06);color:var(--champagne)}
+.mobilemenu svg{width:18px;height:18px}
+
+/* ============ report area ============ */
+.stage{position:relative;flex:1;min-height:0;background:var(--jewel-0)}
+.stage iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:none;background:#fff}
+.stage iframe.on{display:block}
+.loading{position:absolute;inset:0;display:none;place-items:center;background:var(--jewel-bg)}
+.loading.on{display:grid}
+.loader{display:flex;flex-direction:column;align-items:center;gap:18px;color:#B4C2E2;font-size:10px;font-weight:600;letter-spacing:.4em;text-transform:uppercase}
+.loader i{width:46px;height:46px;border-radius:50%;border:1px solid rgba(201,160,110,.25);border-top-color:var(--champagne);box-shadow:0 0 22px rgba(52,104,240,.35);animation:spin 1.1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.placeholder{position:absolute;inset:0;display:none;place-items:center;padding:30px;overflow:hidden;background:var(--jewel-bg)}
+.placeholder.on{display:grid}
+.placeholder::before{content:"G";position:absolute;right:-3%;bottom:-20%;font-family:'Montserrat',sans-serif;font-weight:800;font-size:540px;line-height:1;color:rgba(230,204,159,.06)}
+.ph-card{position:relative;max-width:580px;background:linear-gradient(180deg,#FFFFFF,#FBF7EF);border-radius:18px;padding:42px 46px 38px;box-shadow:0 40px 90px rgba(0,0,0,.5),0 0 40px rgba(52,104,240,.18),inset 0 0 0 1px var(--hair)}
+.ph-card::before{content:"";position:absolute;left:46px;right:46px;top:0;height:2px;background:linear-gradient(90deg,#E6CC9F,#B8865B,#E6CC9F)}
+.ph-k{font-size:10px;font-weight:700;letter-spacing:.3em;color:var(--gold);text-transform:uppercase}
+html[lang="th"] .ph-k{letter-spacing:.05em;font-size:12px;font-weight:500}
+.ph-card h2{margin:12px 0 12px;font-size:28px;font-weight:700;color:var(--jewel-2);letter-spacing:-.01em}
+html[lang="th"] .ph-card h2{font-weight:500}
+.ph-card p{margin:0 0 18px;color:#5D677D;line-height:1.75}
+html[lang="th"] .ph-card p{font-weight:300;font-size:15px}
+.ph-card code{background:var(--paper);border:1px solid var(--hair);border-radius:6px;padding:2px 7px;font-size:12.5px;color:var(--jewel-2)}
+.ph-tag{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:linear-gradient(135deg,#FBF4E7,#F3E5CC);border:1px solid #E6D2AE;color:#8A6236;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.ph-tag::before{content:"";width:6px;height:6px;transform:rotate(45deg);background:var(--gold)}
+html[lang="th"] .ph-tag{letter-spacing:.03em;font-size:12px;font-weight:500}
+
+.scrim{display:none}
+@media (max-width:900px){
+  .sidebar{transform:translateX(-102%);transition:transform .32s cubic-bezier(.16,1,.3,1);width:min(300px,86vw);box-shadow:16px 0 50px rgba(0,0,0,.55)}
+  body.menu-open .sidebar{transform:none}
+  .scrim{display:block;position:fixed;inset:0;background:rgba(4,10,30,.7);z-index:25;opacity:0;pointer-events:none;transition:opacity .32s}
+  body.menu-open .scrim{opacity:1;pointer-events:auto}
+  .main{left:0}
+  .mobilemenu{display:inline-grid;place-items:center}
+  .topbar{padding:0 12px;gap:8px;height:64px}
+  .crumb .pre,.crumb .sep{display:none}
+  .toolbtn .lbl{display:none}
+  .toolbtn{padding:9px 11px}
+  .segmented button{padding:8px 11px}
+}
+</style>
+</head>
+<body>
+<aside class="sidebar" id="sidebar" aria-label="Reports">
+  <div class="brand">
+    <div class="mono"><span>G</span></div>
+    <div class="brand-word">GMM GRAMMY<em>PLACE</em></div>
+  </div>
+  <div class="ornament"><i></i></div>
+  <div class="brand-sub" data-en="Report suite" data-th="ชุดรายงาน">Report suite</div>
+  <div class="navcaption" data-en="Intelligence modules" data-th="โมดูลข้อมูล">Intelligence modules</div>
+  <nav class="nav" id="nav"></nav>
+  <div class="sidebar-foot">
+    <strong>GMM GRAMMY PLACE</strong>
+    <div data-en="Bangkok · Asoke · Sukhumvit 21" data-th="กรุงเทพฯ · อโศก · สุขุมวิท 21">Bangkok · Asoke · Sukhumvit 21</div>
+    <div data-en="Prepared by &lt;b&gt;Areewan C.&lt;/b&gt;" data-th="จัดทำโดย &lt;b&gt;Areewan C.&lt;/b&gt;">Prepared by <b>Areewan C.</b></div>
+  </div>
+</aside>
+<div class="scrim" id="scrim"></div>
+
+<div class="main">
+  <header class="topbar">
+    <div class="top-left">
+      <button class="mobilemenu" id="menuBtn" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+      <div class="crumb"><span class="pre">GMM Grammy Place</span><span class="sep"></span><b id="crumbTitle"></b></div>
+    </div>
+    <div class="top-right">
+      <div class="segmented" id="langs" role="group" aria-label="Language">
+        <button data-lang="en">English</button><button data-lang="th" lang="th">ไทย</button>
+      </div>
+      <a class="toolbtn" id="openTab" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg><span class="lbl" data-en="Open in new tab" data-th="เปิดในแท็บใหม่">Open in new tab</span></a>
+      <button class="toolbtn" id="printBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9V4h10v5M7 17H5a1 1 0 0 1-1-1v-5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a1 1 0 0 1-1 1h-2M7 14h10v6H7z"/></svg><span class="lbl" data-en="Print" data-th="พิมพ์">Print</span></button>
+    </div>
+  </header>
+  <div class="stage" id="stage">
+    <div class="loading" id="loading"><div class="loader"><i></i><span id="loadingTxt">Loading</span></div></div>
+    <div class="placeholder" id="placeholder">
+      <div class="ph-card">
+        <div class="ph-k" data-en="Master report · PDF sources" data-th="รายงานหลัก · แหล่งข้อมูล PDF">Master report · PDF sources</div>
+        <h2 data-en="To be added" data-th="รอเพิ่มเอกสาร">To be added</h2>
+        <p data-en="Upload the master report PDF to this site's folder with the file name &lt;code&gt;master-report.pdf&lt;/code&gt;. It will then open here automatically, inside this menu."
+           data-th="อัปโหลดไฟล์ PDF รายงานหลักไว้ในโฟลเดอร์เดียวกับหน้านี้ โดยตั้งชื่อไฟล์ว่า &lt;code&gt;master-report.pdf&lt;/code&gt; แล้วรายงานจะแสดงที่นี่โดยอัตโนมัติ">Upload the master report PDF to this site's folder with the file name <code>master-report.pdf</code>. It will then open here automatically, inside this menu.</p>
+        <span class="ph-tag" data-en="To be confirmed" data-th="รอการยืนยัน">To be confirmed</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">';
+  var ICON = {
+    tower: SVG + '<path d="M7 21V5.5L12 3l5 2.5V21M4 21h16M10 8h4M10 11.5h4M10 15h4M12 3V1.5"/></svg>',
+    city: SVG + '<path d="M3 21h18M5 21V11h4v10M10 21V6h5v15M16 21v-8h3v8M12 9h1M12 12h1M12 15h1"/></svg>',
+    doc: SVG + '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 16.5h6M9 9.5h2"/></svg>',
+    chev: '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>'
+  };
+
+  /* ---- the reports, and the sections in each one's dropdown ----
+     GMM report: chapters are found by their number ("3. …") in the edition on screen.
+     CBD report: sections are found by their id.                                      */
+  var REPORTS = [
+    { id: 'gmm-report', type: 'gmm', icon: ICON.tower,
+      url: 'https://areewanbiz-lang.github.io/gmm-grammy-place-report/',
+      en: 'Strategy Report', th: 'รายงานกลยุทธ์',
+      sections: [
+        { top: true, n: '', en: 'Cover & 3D Model', th: 'หน้าปกและโมเดล 3 มิติ' },
+        { ch: 1, n: '01', en: 'Executive Assessment', th: 'การประเมินสำหรับผู้บริหาร' },
+        { ch: 2, n: '02', en: 'Strategic Direction & Growth', th: 'ทิศทางกลยุทธ์และการเติบโต' },
+        { ch: 3, n: '03', en: 'Building Profile & Occupiers', th: 'ข้อมูลอาคารและฐานผู้เช่า' },
+        { ch: 4, n: '04', en: 'Vacancy & Leasing', th: 'พื้นที่ว่างและการปล่อยเช่า' },
+        { ch: 5, n: '05', en: 'Tenant Mix & Direct Leasing', th: 'ส่วนผสมผู้เช่าและการเช่าตรง' },
+        { ch: 6, n: '06', en: 'Managed Alternatives', th: 'ทางเลือกที่บริหารเอง' },
+        { ch: 7, n: '07', en: 'Asset Operations & Service', th: 'การดำเนินงานและคุณภาพบริการ' },
+        { ch: 8, n: '08', en: 'NOI, Comparables & CAPEX', th: 'NOI ตลาดเปรียบเทียบ และ CAPEX' },
+        { ch: 9, n: '09', en: 'Governance Frameworks', th: 'กรอบการบริหารและกำกับดูแล' },
+        { ch: 10, n: '10', en: '100-Day Programme', th: 'โครงการ 100 วัน' },
+        { ch: 11, n: '11', en: 'Workflows & 12-Month Direction', th: 'ขั้นตอนงานและทิศทาง 12 เดือน' },
+        { ch: 12, n: '12', en: 'Conclusion & Decisions', th: 'ข้อสรุปและการตัดสินใจ' },
+        { ch: 13, n: '13', en: 'Excel Evidence Model', th: 'แบบจำลองหลักฐาน Excel' },
+        { ch: 14, n: '14', en: 'Documentary Records', th: 'บันทึกหลักฐานเชิงเอกสาร' },
+        { ch: 15, n: '15', en: 'Sources & References', th: 'แหล่งข้อมูลและเอกสารอ้างอิง' }
+      ] },
+    { id: 'cbd-market', type: 'cbd', icon: ICON.city,
+      url: 'https://areewanbiz-lang.github.io/Bangkok-CBD-Office-Market-/',
+      en: 'Bangkok CBD Market', th: 'ตลาดสำนักงาน CBD',
+      sections: [
+        { el: 'market-infographic', n: '', en: 'Key Insight Infographic', th: 'อินโฟกราฟิกประเด็นสำคัญ' },
+        { el: 'section-macro', n: '01', en: 'Macro Drivers', th: 'ปัจจัยเศรษฐกิจมหภาค' },
+        { el: 'section-map', n: '3D', en: 'Interactive CBD Map', th: 'แผนที่ CBD แบบ 3 มิติ' },
+        { el: 'section-01', n: '02', en: 'Supply & ESG Absorption', th: 'อุปทานและการดูดซับ ESG' },
+        { el: 'section-02', n: '03', en: 'Grade Tiers', th: 'เกรดอาคาร' },
+        { el: 'section-03', n: '04', en: 'Sub-Markets', th: 'ตลาดย่อย' },
+        { el: 'section-04', n: '05', en: 'Occupier Demographics', th: 'กลุ่มผู้เช่า' },
+        { el: 'section-05', n: '06', en: 'Asoke – CBD Peer Set', th: 'อาคารเทียบเคียงย่านอโศก' },
+        { el: 'section-06', n: '07', en: 'Lease Calculator', th: 'เครื่องคำนวณค่าเช่า' },
+        { el: 'section-outlook', n: '08', en: 'Market Outlook', th: 'แนวโน้มตลาด' },
+        { el: 'section-07', n: '09', en: 'SWOT & PESTEL', th: 'SWOT และ PESTEL' },
+        { el: 'section-methodology', n: '10', en: 'Sources & Methodology', th: 'แหล่งข้อมูลและระเบียบวิธี' }
+      ] },
+    { id: 'master-report', type: 'pdf', icon: ICON.doc,
+      url: 'master-report.pdf',
+      en: 'Master Report', th: 'รายงานหลัก', sections: [] }
+  ];
+
+  /* each report's own menu is hidden, so this left menu is the only one
+     (works once the hub sits on the same GitHub Pages site as the reports) */
+  var INNER_CSS = {
+    cbd: 'header.sticky{display:none!important}.lang-switch{display:none!important}section[id]{scroll-margin-top:18px!important}',
+    gmm: 'details.toc,.langsw{display:none!important}'
+  };
+
+  var $ = function (id) { return document.getElementById(id); };
+  var lang = 'en', current = null, frames = {}, pdfOk = null, openGroup = null;
+  try { if (localStorage.getItem('gmmSuiteLang') === 'th') lang = 'th'; } catch (e) {}
+
+  function srcFor(r, hash) {
+    if (r.type === 'gmm') return r.url + '#' + (hash || 'en');
+    if (r.type === 'cbd') return r.url + '?lang=' + lang + (hash ? '#' + hash : '');
+    return r.url;
+  }
+  function byId(id) { return REPORTS.filter(function (x) { return x.id === id; })[0]; }
+
+  /* ---------- build the menu ---------- */
+  $('nav').innerHTML = REPORTS.map(function (r) {
+    var subs = r.sections.map(function (s, i) {
+      return '<a class="sub" href="#' + r.id + '" data-rep="' + r.id + '" data-i="' + i + '">' +
+             '<span class="sub-t"></span>' + (s.n ? '<span class="sub-n">' + s.n + '</span>' : '') + '</a>';
+    }).join('');
+    return '<div class="group" data-group="' + r.id + '">' +
+             '<button class="nav-btn" data-id="' + r.id + '" aria-expanded="false">' + r.icon + '<span class="nav-t"></span>' +
+               (r.sections.length ? ICON.chev : '') + '</button>' +
+             (r.sections.length ? '<div class="subs"><div class="subs-in">' + subs + '</div></div>' : '') +
+           '</div>';
+  }).join('');
+  var btns = Array.prototype.slice.call(document.querySelectorAll('.nav-btn'));
+  var subLinks = Array.prototype.slice.call(document.querySelectorAll('.sub'));
+
+  function setOpenGroup(id) {
+    openGroup = id;
+    document.querySelectorAll('.group').forEach(function (g) {
+      var on = g.getAttribute('data-group') === id;
+      g.classList.toggle('open', on);
+      g.querySelector('.nav-btn').setAttribute('aria-expanded', on ? 'true' : 'false');
+    });
+  }
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var id = b.getAttribute('data-id');
+      if (current && current.id === id) { setOpenGroup(openGroup === id ? null : id); return; }  /* click again to fold */
+      location.hash = id;
+    });
+  });
+  subLinks.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var r = byId(a.getAttribute('data-rep')), i = +a.getAttribute('data-i');
+      if (!current || current.id !== r.id) { pendingJump = { r: r, i: i }; location.hash = r.id; }
+      else goSection(r, i);
+      menu(false);
+    });
+  });
+
+  function paintText() {
+    document.documentElement.lang = lang;
+    btns.forEach(function (b, i) { b.querySelector('.nav-t').textContent = REPORTS[i][lang]; });
+    subLinks.forEach(function (a) {
+      var s = byId(a.getAttribute('data-rep')).sections[+a.getAttribute('data-i')];
+      a.querySelector('.sub-t').textContent = s[lang];
+    });
+    document.querySelectorAll('[data-en]').forEach(function (el) { el.innerHTML = el.getAttribute('data-' + lang); });
+    document.querySelectorAll('#langs button').forEach(function (b) { b.classList.toggle('sel', b.getAttribute('data-lang') === lang); });
+    $('loadingTxt').textContent = lang === 'th' ? 'กำลังโหลด' : 'Loading';
+    if (current) { $('crumbTitle').textContent = current[lang]; document.title = current[lang] + ' · GMM Grammy Place'; }
+  }
+
+  /* ---------- reaching inside a report (same site only; silently skipped otherwise) ---------- */
+  function doc(f) { try { return f.contentDocument && f.contentDocument.body ? f.contentDocument : null; } catch (e) { return null; } }
+  function target(r, d, i) {
+    var s = r.sections[i];
+    if (s.top) return 'TOP';
+    if (s.el) return d.getElementById(s.el);
+    var ed = d.querySelector('.edition.active') || d;
+    var hs = ed.querySelectorAll('h2'), re = new RegExp('^\\s*[▾▸]?\\s*' + s.ch + '\\.\\s');
+    for (var k = 0; k < hs.length; k++) if (re.test(hs[k].textContent)) return hs[k];
+    return null;
+  }
+  var pendingJump = null;
+  function goSection(r, i) {
+    markSub(r, i, true);
+    var f = frames[r.id], d = f && f.__loaded && doc(f);
+    if (d) {
+      var t = target(r, d, i), w = f.contentWindow;
+      if (t === 'TOP') { w.scrollTo({ top: 0, behavior: 'smooth' }); return; }
+      if (t) { t.scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
+    }
+    if (r.type === 'cbd' && r.sections[i].el) { f.src = srcFor(r, r.sections[i].el); }   /* fallback: plain link */
+  }
+
+  var lockUntil = 0;
+  function markSub(r, i, lock) {
+    if (lock) lockUntil = Date.now() + 1200;
+    subLinks.forEach(function (a) {
+      a.classList.toggle('on', a.getAttribute('data-rep') === r.id && +a.getAttribute('data-i') === i);
+    });
+    var on = document.querySelector('.sub.on');
+    if (on) {
+      var nav = $('nav'), ar = on.getBoundingClientRect(), nr = nav.getBoundingClientRect();
+      if (ar.top < nr.top + 10 || ar.bottom > nr.bottom - 10) nav.scrollTop += ar.top - nr.top - nr.height / 2;
+    }
+  }
+  /* follow the reader: highlight the section on screen */
+  function spy(r, f) {
+    var d = doc(f); if (!d || !r.sections.length) return;
+    var w = f.contentWindow, tick = false;
+    function upd() {
+      tick = false;
+      if (current !== r || Date.now() < lockUntil) return;
+      var line = w.innerHeight * 0.3, pick = 0;
+      for (var i = 0; i < r.sections.length; i++) {
+        var t = target(r, d, i);
+        if (t && t !== 'TOP' && t.getBoundingClientRect().top <= line) pick = i;
+      }
+      markSub(r, pick, false);
+    }
+    w.addEventListener('scroll', function () { if (!tick) { tick = true; w.requestAnimationFrame(upd); } }, { passive: true });
+    upd();
+  }
+
+  function onFrameLoad(r, f) {
+    f.__loaded = true;
+    var d = doc(f);
+    if (d && INNER_CSS[r.type] && !d.getElementById('suite-inner')) {
+      var st = d.createElement('style'); st.id = 'suite-inner'; st.textContent = INNER_CSS[r.type]; d.head.appendChild(st);
+    }
+    if (r.type === 'gmm' && lang === 'th') { f.__lang = 'th'; f.src = srcFor(r, 'th'); }   /* the report always opens in English */
+    if (current === r) $('loading').classList.remove('on');
+    spy(r, f);
+    if (pendingJump && pendingJump.r === r) { var p = pendingJump; pendingJump = null; setTimeout(function () { goSection(p.r, p.i); }, 350); }
+  }
+
+  /* ---------- show a report ---------- */
+  function showPdf(r) {
+    function done(ok) {
+      pdfOk = ok;
+      if (current !== r) return;
+      if (ok) attach(r); else { $('loading').classList.remove('on'); $('placeholder').classList.add('on'); }
+    }
+    if (pdfOk !== null) return done(pdfOk);
+    if (location.protocol === 'file:') return done(false);
+    fetch(r.url, { method: 'HEAD' }).then(function (res) { done(res.ok); }).catch(function () { done(false); });
+  }
+  function attach(r) {
+    var f = frames[r.id];
+    if (!f) {
+      f = document.createElement('iframe');
+      f.title = r.en;
+      f.setAttribute('allow', 'fullscreen');
+      f.__lang = r.type === 'gmm' ? 'en' : lang;
+      f.addEventListener('load', function () { if (!f.__loaded) onFrameLoad(r, f); else if (current === r) $('loading').classList.remove('on'); });
+      f.src = srcFor(r);
+      frames[r.id] = f;
+      $('stage').appendChild(f);
+    } else {
+      syncLang(r, f);
+      if (f.__loaded) { $('loading').classList.remove('on'); if (pendingJump && pendingJump.r === r) { var p = pendingJump; pendingJump = null; goSection(p.r, p.i); } }
+    }
+    f.classList.add('on');
+  }
+  function open(id) {
+    var r = byId(id) || REPORTS[0];
+    current = r;
+    btns.forEach(function (b) {
+      var on = b.getAttribute('data-id') === r.id;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-current', on ? 'page' : 'false');
+    });
+    setOpenGroup(r.sections.length ? r.id : null);
+    Object.keys(frames).forEach(function (k) { frames[k].classList.remove('on'); });
+    $('placeholder').classList.remove('on');
+    $('loading').classList.add('on');
+    $('openTab').href = srcFor(r, r.type === 'gmm' ? lang : '');
+    if (!pendingJump) markSub(r, 0, false);
+    paintText();
+    if (r.type === 'pdf') showPdf(r); else attach(r);
+  }
+
+  /* ---------- language: keep each report in step with English | ไทย ---------- */
+  function syncLang(r, f) {
+    if (f.__lang === lang) return;
+    f.__lang = lang;
+    if (r.type === 'gmm') { f.src = srcFor(r, lang); return; }        /* hash change: switches without reloading */
+    if (r.type === 'cbd') {
+      try { if (f.contentWindow.setReportLang) { f.contentWindow.setReportLang(lang); return; } } catch (e) {}
+      f.__loaded = false; $('loading').classList.add('on'); f.src = srcFor(r);
+    }
+  }
+  document.querySelectorAll('#langs button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      lang = b.getAttribute('data-lang');
+      try { localStorage.setItem('gmmSuiteLang', lang); } catch (e) {}
+      paintText();
+      if (current) { $('openTab').href = srcFor(current, current.type === 'gmm' ? lang : ''); if (frames[current.id]) syncLang(current, frames[current.id]); }
+    });
+  });
+
+  $('printBtn').addEventListener('click', function () {
+    var f = current && frames[current.id];
+    try { if (f) { f.contentWindow.focus(); f.contentWindow.print(); return; } } catch (e) {}
+    window.open($('openTab').href, '_blank');
+  });
+
+  function menu(o) { document.body.classList.toggle('menu-open', o); }
+  $('menuBtn').addEventListener('click', function () { menu(true); });
+  $('scrim').addEventListener('click', function () { menu(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') menu(false); });
+
+  window.addEventListener('hashchange', function () { open(location.hash.slice(1)); });
+  open(location.hash.slice(1));
+})();
+</script>
+</body>
+</html>
