@@ -105,24 +105,27 @@ html[lang="th"] .tc-k{font-family:'Kanit',sans-serif;font-size:26px;font-weight:
 html[lang="th"] .tc-pillars li{font-family:'Kanit',sans-serif;font-size:13.5px;font-weight:400}
 
 /* ---- top bar headline (GMM Grammy Place + master strategy) ---- */
-:root{--top:88px}
+:root{--top:96px}
 .sidebar{padding-top:22px}
 .title-card{margin-top:0}
-.mono-top{width:48px;height:48px}
-.mono-top span{font-size:21px}
-.topline{min-width:0;display:flex;flex-direction:column;gap:5px}
-.tl-k{display:flex;align-items:center;gap:10px;white-space:nowrap;font-size:10.5px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:#AFC0E2}
+.topline{min-width:0;display:flex;flex-direction:column;gap:4px}
+.tl-k{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#F1DCB4}
+.tl-by{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12px;font-weight:600;color:#C9D6F0;letter-spacing:.02em}
+.tl-by b{color:#fff;font-weight:800}
+.tl-by #crumbTitle{color:#9FB0D6;font-weight:500}
+html[lang="th"] .tl-by{font-family:'Kanit',sans-serif;font-size:13px;font-weight:400}
+html[lang="th"] .tl-k{font-family:'Kanit',sans-serif;font-size:12.5px;font-weight:500}
 .tl-k .sep{width:20px;height:1px;background:var(--gold-2)}
 .tl-k b{color:#F1DCB4;font-weight:800;letter-spacing:.16em}
 .tl-h{font-family:'Century Gothic','CenturyGothic','URW Gothic','Didact Gothic',sans-serif;font-weight:800;font-size:clamp(13px,1.26vw,20px);line-height:1.15;letter-spacing:.04em;text-transform:uppercase;color:#fff;
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-shadow:0 2px 10px rgba(0,0,0,.35)}
 .tl-h em{font-style:normal;background:linear-gradient(180deg,#FFF1D2,#E6CC9F 50%,#B8865B);-webkit-background-clip:text;background-clip:text;color:transparent}
 .tl-int{display:inline-block;margin-right:6px;padding:2px 9px;border-radius:999px;border:1px solid rgba(230,204,159,.6);color:#F1DCB4;font-size:.62em;letter-spacing:.24em;vertical-align:.2em}
-html[lang="th"] .tl-k{letter-spacing:.2em}
+html[lang="th"] .tl-k{letter-spacing:.03em}
 html[lang="th"] .tl-h{font-family:'Kanit',sans-serif;font-weight:600;letter-spacing:.01em;text-transform:none;font-size:clamp(15px,1.4vw,21px)}
 html[lang="th"] .tl-int{letter-spacing:.04em;font-weight:500}
 @media (max-width:1360px){.toolbtn .lbl{display:none}.toolbtn{padding:9px 11px}}
-@media (max-width:900px){:root{--top:64px}.mono-top,.tl-k,.tl-int,.tl-rest{display:none}.tl-h{font-size:14px;letter-spacing:.04em}}
+@media (max-width:900px){:root{--top:64px}.tl-k,.tl-by,.tl-int,.tl-rest{display:none}.tl-h{font-size:14px;letter-spacing:.04em}}
 @media (max-width:480px){#openTab{display:none}}
 
 /* ============ dropdown sections under each report ============ */
@@ -239,11 +242,12 @@ html[lang="th"] .ph-tag{letter-spacing:.03em;font-size:12px;font-weight:500}
   <header class="topbar">
     <div class="top-left">
       <button class="mobilemenu" id="menuBtn" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
-      <div class="mono mono-top"><span>G</span></div>
       <div class="topline">
-        <div class="tl-k">GMM Grammy Place <span class="sep"></span> <b id="crumbTitle"></b></div>
+        <div class="tl-k" data-en="For review by the Geurt Fah Management Team" data-th="เพื่อการพิจารณาของทีมผู้บริหาร บริษัท เกิดฟ้า จำกัด">For review by the Geurt Fah Management Team</div>
         <div class="tl-h" data-en="&lt;span class=&quot;tl-int&quot;&gt;Integrated&lt;/span&gt;&lt;span class=&quot;tl-rest&quot;&gt;Property &amp;amp; Asset Management &lt;/span&gt;&lt;em&gt;Master Strategy&lt;/em&gt;"
              data-th="&lt;span class=&quot;tl-int&quot;&gt;แบบบูรณาการ&lt;/span&gt;&lt;span class=&quot;tl-rest&quot;&gt;การบริหารอสังหาริมทรัพย์และสินทรัพย์ &lt;/span&gt;&lt;em&gt;กลยุทธ์หลัก&lt;/em&gt;"><span class="tl-int">Integrated</span><span class="tl-rest">Property &amp; Asset Management </span><em>Master Strategy</em></div>
+        <div class="tl-by" data-en="Prepared by &lt;b&gt;Areewan C.&lt;/b&gt; · Candidate, Head of Property Management · &lt;span id=&quot;crumbTitle&quot;&gt;&lt;/span&gt;"
+             data-th="จัดทำโดย &lt;b&gt;Areewan C.&lt;/b&gt; · ผู้สมัครตำแหน่ง Head of Property Management · &lt;span id=&quot;crumbTitle&quot;&gt;&lt;/span&gt;">Prepared by <b>Areewan C.</b> · Candidate, Head of Property Management · <span id="crumbTitle"></span></div>
       </div>
     </div>
     <div class="top-right">
