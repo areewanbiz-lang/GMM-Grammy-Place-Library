@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GMM Grammy Place · Property &amp; Asset Management</title>
+<title>Integrated Property &amp; Asset Management Master Strategy · GMM Grammy Place</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -77,6 +77,53 @@ html[lang="th"] .nav-btn.active{font-weight:500}
 .sidebar-foot::before{content:"";position:absolute;left:10px;right:10px;top:0;height:1px;background:linear-gradient(90deg,rgba(201,160,110,.7),rgba(201,160,110,0))}
 .sidebar-foot strong{display:block;color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.2em}
 .sidebar-foot b{color:var(--champagne);font-weight:600}
+
+/* ---- headline card: what this is, and for whom ---- */
+.brand{margin:0 4px 18px}
+.mono{width:56px;height:56px}
+.mono span{font-size:25px}
+.brand-word{font-size:18px;letter-spacing:.12em}
+.brand-word em{font-size:12.5px;letter-spacing:.5em;margin-top:6px}
+.title-card{position:relative;margin:0 2px 20px;padding:16px 14px 14px;text-align:center;border-radius:14px;
+  background:linear-gradient(160deg,rgba(230,204,159,.16),rgba(230,204,159,.04) 55%,rgba(52,104,240,.10));
+  box-shadow:inset 0 0 0 1px rgba(230,204,159,.45),0 10px 26px rgba(0,0,0,.35),0 0 26px rgba(230,204,159,.10)}
+.title-card::before{content:"";position:absolute;left:22%;right:22%;top:-1px;height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,#F1DCB4,transparent)}
+.tc-kicker{display:inline-block;padding:4px 12px;border-radius:999px;border:1px solid rgba(230,204,159,.55);color:#F1DCB4;
+  font-size:10.5px;font-weight:800;letter-spacing:.32em;text-transform:uppercase;background:rgba(230,204,159,.08)}
+.tc-main{margin-top:11px;color:#FFFFFF;font-family:'Century Gothic','CenturyGothic','URW Gothic','Didact Gothic',sans-serif;font-size:15.5px;font-weight:800;line-height:1.25;letter-spacing:.05em;text-transform:uppercase}
+.tc-k{margin-top:3px;font-family:'Century Gothic','CenturyGothic','URW Gothic','Didact Gothic',sans-serif;font-size:23px;font-weight:800;line-height:1.1;letter-spacing:.07em;text-transform:uppercase;
+  background:linear-gradient(180deg,#FFF1D2 0%,#E6CC9F 45%,#B8865B 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))}
+.title-card .ornament{margin:13px 6px 11px}
+.tc-pillars{list-style:none;margin:0;padding:0;text-align:left;display:grid;gap:8px}
+.tc-pillars li{display:flex;align-items:flex-start;gap:9px;color:#EAF0FB;font-size:12.5px;font-weight:700;line-height:1.3}
+.tp-n{flex:none;width:19px;height:19px;margin-top:-1px;border-radius:50%;display:grid;place-items:center;font-size:10.5px;font-weight:800;color:#0B1F52;
+  background:linear-gradient(135deg,#F3DDB2,#C9A06E)}
+html[lang="th"] .tc-kicker{letter-spacing:.06em;font-size:12px;font-weight:500}
+html[lang="th"] .tc-main{font-family:'Kanit',sans-serif;font-size:17px;font-weight:500;letter-spacing:0;text-transform:none}
+html[lang="th"] .tc-k{font-family:'Kanit',sans-serif;font-size:26px;font-weight:600;letter-spacing:.01em}
+html[lang="th"] .tc-pillars li{font-family:'Kanit',sans-serif;font-size:13.5px;font-weight:400}
+
+/* ---- top bar headline (GMM Grammy Place + master strategy) ---- */
+:root{--top:88px}
+.sidebar{padding-top:22px}
+.title-card{margin-top:0}
+.mono-top{width:48px;height:48px}
+.mono-top span{font-size:21px}
+.topline{min-width:0;display:flex;flex-direction:column;gap:5px}
+.tl-k{display:flex;align-items:center;gap:10px;white-space:nowrap;font-size:10.5px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:#AFC0E2}
+.tl-k .sep{width:20px;height:1px;background:var(--gold-2)}
+.tl-k b{color:#F1DCB4;font-weight:800;letter-spacing:.16em}
+.tl-h{font-family:'Century Gothic','CenturyGothic','URW Gothic','Didact Gothic',sans-serif;font-weight:800;font-size:clamp(13px,1.26vw,20px);line-height:1.15;letter-spacing:.04em;text-transform:uppercase;color:#fff;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-shadow:0 2px 10px rgba(0,0,0,.35)}
+.tl-h em{font-style:normal;background:linear-gradient(180deg,#FFF1D2,#E6CC9F 50%,#B8865B);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tl-int{display:inline-block;margin-right:6px;padding:2px 9px;border-radius:999px;border:1px solid rgba(230,204,159,.6);color:#F1DCB4;font-size:.62em;letter-spacing:.24em;vertical-align:.2em}
+html[lang="th"] .tl-k{letter-spacing:.2em}
+html[lang="th"] .tl-h{font-family:'Kanit',sans-serif;font-weight:600;letter-spacing:.01em;text-transform:none;font-size:clamp(15px,1.4vw,21px)}
+html[lang="th"] .tl-int{letter-spacing:.04em;font-weight:500}
+@media (max-width:1360px){.toolbtn .lbl{display:none}.toolbtn{padding:9px 11px}}
+@media (max-width:900px){:root{--top:64px}.mono-top,.tl-k,.tl-int,.tl-rest{display:none}.tl-h{font-size:14px;letter-spacing:.04em}}
+@media (max-width:480px){#openTab{display:none}}
 
 /* ============ dropdown sections under each report ============ */
 .group .subs{display:grid;grid-template-rows:0fr;transition:grid-template-rows .32s cubic-bezier(.16,1,.3,1)}
@@ -166,12 +213,18 @@ html[lang="th"] .ph-tag{letter-spacing:.03em;font-size:12px;font-weight:500}
 </head>
 <body>
 <aside class="sidebar" id="sidebar" aria-label="Reports">
-  <div class="brand">
-    <div class="mono"><span>G</span></div>
-    <div class="brand-word">GMM GRAMMY<em>PLACE</em></div>
+  <div class="title-card">
+    <div class="tc-kicker" data-en="Integrated" data-th="แบบบูรณาการ">Integrated</div>
+    <div class="tc-main" data-en="Property &amp;amp; Asset Management" data-th="การบริหารอสังหาริมทรัพย์และสินทรัพย์">Property &amp; Asset Management</div>
+    <div class="tc-k" data-en="Master Strategy" data-th="กลยุทธ์หลัก">Master Strategy</div>
+    <div class="ornament"><i></i></div>
+    <ul class="tc-pillars">
+      <li><span class="tp-n">1</span><span data-en="Strategic Direction &amp;amp; Three Growth Engines" data-th="ทิศทางกลยุทธ์และเครื่องยนต์การเติบโต 3 ด้าน">Strategic Direction &amp;amp; Three Growth Engines</span></li>
+      <li><span class="tp-n">2</span><span data-en="Occupier &amp;amp; Leasing Intelligence" data-th="ข้อมูลเชิงลึกด้านผู้เช่าและการปล่อยเช่า">Occupier &amp;amp; Leasing Intelligence</span></li>
+      <li><span class="tp-n">3</span><span data-en="Asset Performance, Risk &amp;amp; Governance" data-th="ผลการดำเนินงานสินทรัพย์ ความเสี่ยง และธรรมาภิบาล">Asset Performance, Risk &amp;amp; Governance</span></li>
+      <li><span class="tp-n">4</span><span data-en="100-Day Leadership &amp;amp; Delivery Programme" data-th="ภาวะผู้นำและแผนส่งมอบงาน 100 วัน">100-Day Leadership &amp;amp; Delivery Programme</span></li>
+    </ul>
   </div>
-  <div class="ornament"><i></i></div>
-  <div class="brand-sub" data-en="Property &amp;amp; Asset Management" data-th="การบริหารอสังหาริมทรัพย์และสินทรัพย์">Property &amp; Asset Management</div>
   <div class="navcaption" data-en="Intelligence modules" data-th="โมดูลข้อมูล">Intelligence modules</div>
   <nav class="nav" id="nav"></nav>
   <div class="sidebar-foot">
@@ -186,7 +239,12 @@ html[lang="th"] .ph-tag{letter-spacing:.03em;font-size:12px;font-weight:500}
   <header class="topbar">
     <div class="top-left">
       <button class="mobilemenu" id="menuBtn" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
-      <div class="crumb"><span class="pre">GMM Grammy Place</span><span class="sep"></span><b id="crumbTitle"></b></div>
+      <div class="mono mono-top"><span>G</span></div>
+      <div class="topline">
+        <div class="tl-k">GMM Grammy Place <span class="sep"></span> <b id="crumbTitle"></b></div>
+        <div class="tl-h" data-en="&lt;span class=&quot;tl-int&quot;&gt;Integrated&lt;/span&gt;&lt;span class=&quot;tl-rest&quot;&gt;Property &amp;amp; Asset Management &lt;/span&gt;&lt;em&gt;Master Strategy&lt;/em&gt;"
+             data-th="&lt;span class=&quot;tl-int&quot;&gt;แบบบูรณาการ&lt;/span&gt;&lt;span class=&quot;tl-rest&quot;&gt;การบริหารอสังหาริมทรัพย์และสินทรัพย์ &lt;/span&gt;&lt;em&gt;กลยุทธ์หลัก&lt;/em&gt;"><span class="tl-int">Integrated</span><span class="tl-rest">Property &amp; Asset Management </span><em>Master Strategy</em></div>
+      </div>
     </div>
     <div class="top-right">
       <div class="segmented" id="langs" role="group" aria-label="Language">
@@ -198,15 +256,7 @@ html[lang="th"] .ph-tag{letter-spacing:.03em;font-size:12px;font-weight:500}
   </header>
   <div class="stage" id="stage">
     <div class="loading" id="loading"><div class="loader"><i></i><span id="loadingTxt">Loading</span></div></div>
-    <div class="placeholder" id="placeholder">
-      <div class="ph-card">
-        <div class="ph-k" data-en="Master report · PDF sources" data-th="รายงานหลัก · แหล่งข้อมูล PDF">Master report · PDF sources</div>
-        <h2 data-en="To be added" data-th="รอเพิ่มเอกสาร">To be added</h2>
-        <p data-en="Upload the master report PDF to this site's folder with the file name &lt;code&gt;master-report.pdf&lt;/code&gt;. It will then open here automatically, inside this menu."
-           data-th="อัปโหลดไฟล์ PDF รายงานหลักไว้ในโฟลเดอร์เดียวกับหน้านี้ โดยตั้งชื่อไฟล์ว่า &lt;code&gt;master-report.pdf&lt;/code&gt; แล้วรายงานจะแสดงที่นี่โดยอัตโนมัติ">Upload the master report PDF to this site's folder with the file name <code>master-report.pdf</code>. It will then open here automatically, inside this menu.</p>
-        <span class="ph-tag" data-en="To be confirmed" data-th="รอการยืนยัน">To be confirmed</span>
-      </div>
-    </div>
+    <div class="placeholder" id="placeholder"></div>
   </div>
 </div>
 
@@ -229,21 +279,17 @@ html[lang="th"] .ph-tag{letter-spacing:.03em;font-size:12px;font-weight:500}
       en: 'Strategy Report', th: 'รายงานกลยุทธ์',
       sections: [
         { top: true, n: '', en: 'Cover & 3D Model', th: 'หน้าปกและโมเดล 3 มิติ' },
-        { ch: 1, sid: 's0', n: '01', en: 'Executive Assessment', th: 'การประเมินสำหรับผู้บริหาร' },
-        { ch: 2, sid: 's2', n: '02', en: 'Strategic Direction & Growth', th: 'ทิศทางกลยุทธ์และการเติบโต' },
-        { ch: 3, sid: 's17', n: '03', en: 'Building Profile & Occupiers', th: 'ข้อมูลอาคารและฐานผู้เช่า' },
-        { ch: 4, sid: 's28', n: '04', en: 'Vacancy & Leasing', th: 'พื้นที่ว่างและการปล่อยเช่า' },
-        { ch: 5, sid: 's37', n: '05', en: 'Tenant Mix & Direct Leasing', th: 'ส่วนผสมผู้เช่าและการเช่าตรง' },
-        { ch: 6, sid: 's46', n: '06', en: 'Managed Alternatives', th: 'ทางเลือกที่บริหารเอง' },
-        { ch: 7, sid: 's53', n: '07', en: 'Asset Operations & Service', th: 'การดำเนินงานและคุณภาพบริการ' },
-        { ch: 8, sid: 's57', n: '08', en: 'NOI, Comparables & CAPEX', th: 'NOI ตลาดเปรียบเทียบ และ CAPEX' },
-        { ch: 9, sid: 's61', n: '09', en: 'Governance Frameworks', th: 'กรอบการบริหารและกำกับดูแล' },
-        { ch: 10, sid: 's63', n: '10', en: '100-Day Programme', th: 'โครงการ 100 วัน' },
-        { ch: 11, sid: 's66', n: '11', en: 'Workflows & 12-Month Direction', th: 'ขั้นตอนงานและทิศทาง 12 เดือน' },
-        { ch: 12, sid: 's68', n: '12', en: 'Conclusion & Decisions', th: 'ข้อสรุปและการตัดสินใจ' },
-        { ch: 13, sid: 's69', n: '13', en: 'Excel Evidence Model', th: 'แบบจำลองหลักฐาน Excel' },
-        { ch: 14, sid: 's71', n: '14', en: 'Documentary Records', th: 'บันทึกหลักฐานเชิงเอกสาร' },
-        { ch: 15, sid: 's75', n: '15', en: 'Sources & References', th: 'แหล่งข้อมูลและเอกสารอ้างอิง' }
+        { sid: 's1', n: '01', en: 'Executive Summary', th: 'บทสรุปผู้บริหาร' },
+        { sid: 's2', n: '02', en: 'Available Space', th: 'พื้นที่ว่างให้เช่า' },
+        { sid: 's5', n: '03', en: 'Tenant Structure & Stacking', th: 'โครงสร้างผู้เช่าและผังรายชั้น' },
+        { sid: 's9', n: '04', en: 'Vacancy & Rental Benchmarks', th: 'พื้นที่ว่างและค่าเช่าเทียบเคียง' },
+        { sid: 's11', n: '05', en: 'Engineering & MEP Audit', th: 'วิศวกรรมอาคารและระบบ MEP' },
+        { sid: 's12', n: '06', en: 'Asset Management Master Plan', th: 'แผนกลยุทธ์บริหารทรัพย์สิน' },
+        { sid: 's17', n: '07', en: 'Financial Case: NOI & CAPEX', th: 'กรณีทางการเงิน: NOI และ CAPEX' },
+        { sid: 's20', n: '08', en: 'Key Risks & Mitigations', th: 'ความเสี่ยงและแนวทางรับมือ' },
+        { sid: 's21', n: '09', en: '100-Day Roadmap & KPIs', th: 'แผน 100 วันและตัวชี้วัด' },
+        { sid: 's22', n: '10', en: 'Conclusion', th: 'บทสรุป' },
+        { sid: 's23', n: '11', en: 'Sources & Assumptions', th: 'แหล่งข้อมูลและสมมติฐาน' }
       ] },
     { id: 'cbd-market', type: 'cbd', icon: ICON.city,
       url: 'https://areewanbiz-lang.github.io/Bangkok-CBD-Office-Market-/',
@@ -261,21 +307,6 @@ html[lang="th"] .ph-tag{letter-spacing:.03em;font-size:12px;font-weight:500}
         { el: 'section-outlook', n: '08', en: 'Market Outlook', th: 'แนวโน้มตลาด' },
         { el: 'section-07', n: '09', en: 'SWOT & PESTEL', th: 'SWOT และ PESTEL' },
         { el: 'section-methodology', n: '10', en: 'Sources & Methodology', th: 'แหล่งข้อมูลและระเบียบวิธี' }
-      ] },
-    { id: 'master-report', type: 'dash', icon: ICON.doc,
-      url: 'https://areewanbiz-lang.github.io/GMM-Grammy-Place-Report-Dashboard-2026/',
-      en: 'Master Report', th: 'รายงานหลัก',
-      sections: [
-        { view: 'overview', n: '', en: 'Overview', th: 'ภาพรวมสินทรัพย์' },
-        { view: 'visuals', n: '3D', en: 'Original 3D & Charts', th: 'ภาพ 3 มิติและกราฟต้นฉบับ' },
-        { view: 'floors', n: '01', en: 'Floor Directory', th: 'ผังผู้เช่ารายชั้น' },
-        { view: 'vacancy', n: '02', en: 'Vacancy Register', th: 'รายการพื้นที่ว่าง' },
-        { view: 'market', n: '03', en: 'Market Benchmarks', th: 'เปรียบเทียบค่าเช่า' },
-        { view: 'cbd', n: '04', en: 'Bangkok CBD Dataset', th: 'ชุดข้อมูล CBD กรุงเทพฯ' },
-        { view: 'finance', n: '05', en: 'Financial Scenarios', th: 'จำลองผลตอบแทน' },
-        { view: 'capex', n: '06', en: 'CAPEX Programme', th: 'แผนงบลงทุน CAPEX' },
-        { view: 'roadmap', n: '07', en: '100-Day Roadmap', th: 'แผนดำเนินงาน 100 วัน' },
-        { view: 'report', n: '08', en: 'Full Source Report', th: 'รายงานฉบับเต็ม' }
       ] }
   ];
 
@@ -358,10 +389,8 @@ html[lang="th"] .ph-tag{letter-spacing:.03em;font-size:12px;font-weight:500}
     var s = r.sections[i];
     if (s.top) return 'TOP';
     if (s.el) return d.getElementById(s.el);
-    var ed = d.querySelector('.edition.active') || d;
-    var hs = ed.querySelectorAll('h2'), re = new RegExp('^\\s*[▾▸]?\\s*' + s.ch + '\\.\\s');
-    for (var k = 0; k < hs.length; k++) if (re.test(hs[k].textContent)) return hs[k];
-    return null;
+    var lg = (d.documentElement.lang === 'th') ? 'th' : 'en';   /* chapter headings are numbered en-s1… / th-s1… */
+    return d.getElementById(lg + '-' + s.sid);
   }
   var pendingJump = null;
   function goSection(r, i) {
